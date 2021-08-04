@@ -42,6 +42,6 @@ app.listen(PORT, () => {
   console.log("Server is running at port:"+ PORT);
 });
 
-app.get('/testing', (req, res) => {
+app.get('/', (req, res) => {
   res.send({ yeah: "connection success" });
 })  

@@ -4,7 +4,10 @@ const app = express();
 
 
 app.post("/add_user", async (request, response) => {
-    const user = new userModel(request.body);
+    const username = req.query.name;
+    const score = req.query.score;
+    const reqJSON = JSON.parse(`{"name":"${username}","score":${score}}`);
+    const user = new userModel(reqJSON);
   
     try {
       await user.save();
